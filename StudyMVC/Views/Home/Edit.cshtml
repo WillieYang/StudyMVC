@@ -1,0 +1,15 @@
+﻿@model StudyMVC.Models.Person
+<html>
+<body>
+    <h1>Edit Details</h1>
+    @Html.ValidationSummary()
+    @using (@Html.BeginForm("Edit", "Home"))
+    {
+        <div class="person-editor">
+            @Html.EditorForModel()
+            <input type="submit" value="submit" />
+        </div>
+    }
+</body>
+</html>
+

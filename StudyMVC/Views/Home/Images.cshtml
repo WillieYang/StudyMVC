@@ -1,0 +1,17 @@
+﻿@model StudyMVC.Models.Image[]
+<html>
+<body>
+    @if (Model.Length == 0)
+    {
+        <h1>No Images Found</h1>
+    }else {
+        <h1>Images of Person @Model[0].PersonID</h1>
+        foreach (StudyMVC.Models.Image i in Model){
+        if (i.ImageData != null)
+        {
+                <img src="data:@i.ImageMimeType;base64, @Convert.ToBase64String(i.ImageData)"/>
+            }
+        }
+    }
+</body>
+</html>

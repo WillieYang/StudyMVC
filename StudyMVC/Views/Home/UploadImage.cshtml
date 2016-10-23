@@ -1,0 +1,15 @@
+﻿
+@*@model StudyMVC.Models.Image*@
+
+@model int
+<html>
+<body>
+    <h1>Upload Image for Person:@Model.</h1>
+    @Html.ValidationSummary()
+    <form enctype="multipart/form-data" method="post" action="/Home/UploadImage/@Model">
+            <input type="file" name="SeledtedImage"/>
+            <input type="submit" value="submit"/>
+    </form>
+</body>
+</html>
+

@@ -1,0 +1,26 @@
+﻿@model StudyMVC.Models.Person[]
+<html>
+<head>
+    <title>Index</title>
+</head>
+<body>
+    <h1>Birthday Index</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Birthday</th>
+            <th>Show</th>
+        </tr>
+        @foreach (var p in Model)
+        {<tr>
+            <td>@p.PersonID</td>
+            <td>@p.UniqName</td>
+            <td>@p.Birthday</td>
+            @*<td><a href="/Home/Details/@p.PersonID">More</a></td>*@
+            <td>@Html.ActionLink("More", "Details", new { pid = p.PersonID })</td>
+        </tr>
+        }
+    </table>
+</body>
+</html>

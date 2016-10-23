@@ -1,0 +1,13 @@
+﻿@model StudyMVC.Models.Person
+<html>
+<body>
+    <h1>Details of Person @Model.PersonID</h1>
+    <p>They are knowa as @Html.Display("UniqName")</p>
+    <p>Their birthday is @Html.DisplayFor(Model => Model.Birthday)</p>
+    <p>Their database record is shown below</p>
+    <div class="person-display">
+        @Html.DisplayForModel(Model)
+    </div>
+</body>
+</html>
+
