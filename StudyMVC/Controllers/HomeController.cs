@@ -154,5 +154,24 @@ namespace StudyMVC.Controllers
             return RedirectToAction("Images",pid);
         }
 
+        [Route("Home/Delete/{pid:int}")]
+        [HttpGet]
+        public ViewResult Delete(int pid)
+        {
+            return View(BirthdayDB.FindByNumber(pid));
+        }
+
+        [Route("Home/Delete/{pid:int}")]
+        [HttpPost]
+        public ActionResult Delete(int pid, bool confirm) {
+            if (confirm){
+                ImageContext ImContext = new Models.ImageContext();
+                ImContext.DeleteImageByPerson(pid);
+                Person p = BirthdayDB.FindByNumber(pid);
+                BirthdayDB.Remove(p);
+                PContext.SaveChanges();
+            }
+            return RedirectToAction("Index", BirthdayDB.ToArray());
+        }
     }
 }

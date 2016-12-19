@@ -174,6 +174,7 @@
     <Content Include="Views\Home\CreateSucess.cshtml" />
     <Content Include="Views\Home\Images.cshtml" />
     <Content Include="Views\Home\UploadImage.cshtml" />
+    <Content Include="Views\Home\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

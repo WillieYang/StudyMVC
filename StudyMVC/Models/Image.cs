@@ -31,5 +31,12 @@ namespace StudyMVC.Models
         {
             return (from i in images where i.PersonID == pid select i);
         }
+    public static void DeleteImageByPerson(
+        this ImageContext images, int pid){
+        foreach (Image i in images.ImageDB){
+                if (i.PersonID == pid) images.ImageDB.Remove(i);
+            }
+            images.SaveChanges();
+        }
     }
     }

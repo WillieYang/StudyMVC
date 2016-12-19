@@ -1,0 +1,20 @@
+﻿
+@model StudyMVC.Models.Person
+<html>
+<body>
+    <h1>Delete Person @Model.PersonID</h1>
+    <p>They are known as @Html.Display("UniqName")</p>
+    <p>Their birsday is @Html.DisplayFor(Model => Model.Birthday)</p>
+    @using (@Html.BeginForm("Delete", "Home"))
+    {
+        <div class="person-editor">
+            <span class="display-label">Confirm:</span>
+            <input type="checkbox" value="true" name="confirm" />
+            <input type="hidden" value="false" name="confirm" />
+            <input type="submit" value="submit"/>
+        </div>
+    }
+</body>
+</html>
+
+

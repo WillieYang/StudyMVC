@@ -16,9 +16,10 @@
         {<tr>
             <td>@p.PersonID</td>
             <td>@p.UniqName</td>
-            <td>@p.Birthday</td>
+            <td>@Html.Partial("DateOnly", p.Birthday)</td>
             @*<td><a href="/Home/Details/@p.PersonID">More</a></td>*@
-            <td>@Html.ActionLink("More", "Details", new { pid = p.PersonID })</td>
+            <td>@Html.ActionLink("More", "Details", new { pid = p.PersonID })
+                @Html.ActionLink("Delete", "Delete", new { pid = p.PersonID })</td>
         </tr>
         }
     </table>
